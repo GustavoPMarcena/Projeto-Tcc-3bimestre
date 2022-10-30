@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"/>
+   <title>Cadastro</title>
+</head>
+
+<body>
+   
+   <p style="font-size: 40px; text-align: center; ">Adicionar Tccs</p>
+   <br><br>
+   <form action="{% url 'adicionartcc' %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+         <input type="submit">
+         <br><br><br>
+         <a href="{% url 'visualizar' %}">Ver Tccs cadastrados</a>
+
+
+   </form>
+</body>
+
+
+</html>

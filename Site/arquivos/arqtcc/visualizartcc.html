@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"/>
+   <title>Cadastro</title>
+</head>
+
+<body>
+   <p style="font-size: 40px; text-align: center; ">Visualizar Tccs</p>
+   <ul>
+     {% for dadosform in tasks %}
+         <div style="width: 95%; border: 2px solid black;">
+            <div>
+                <h5 style="font-size: 20px;"> Titulo: {{ dadosform.titulo }}</h5>
+                <p>Autor: {{ dadosform.autor }}</p>
+                <p>Orientador: {{dadosform.orientador}}</p>
+                <p>Resumo: {{dadosform.resumo}}</p>
+                <p>Ano de lançamento: {{ dadosform.ano_documento }}</p>
+                <a href="/editartcc/{{dadosform.id}}" >Editar</a><br>
+                <a href="/deletartcc/{{dadosform.id}}" >Deletar</a>
+            </div>
+           </div>
+           <br><br>
+   
+     {% endfor%}
+     <br><br><br>
+     <a href="{% url 'adicionartcc' %}">Adicionar mais tccs</a>
+     <br><br>
+     <a href="{% url 'index' %}">Voltar a tela inicial</a>
+     <br><br><br>
+   </ul>
+</body>
+
+
+</html>
